@@ -1,0 +1,9 @@
+# .gitignore for Scala snippets and programs
+
+# match only directories (thus the trailing /) and subdirectories (thus no leading /)
+node_modules/
+
+# vscode files
+*.code-workspace
+.vscode
+

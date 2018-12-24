@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Hello!</title>
+</head>
+<body>
+  <p>Open the Developer's console</p>
+  <p><span id="one"></span></p>
+  <p><span id="two"></span></p>
+  <script>
+    function time(name, action) {
+      const start = Date.now();
+      action();
+      console.log(`${ name } took ${ Date.now() - start }`);
+    }
+
+    time('naive', () => {
+      const target = document.getElementById('one');
+      while (target.offsetWidth < 2000) {
+        target.appendChild(document.createTextNode('X'))
+      }
+    });
+
+    time('clever', () => {
+      const target = document.getElementById('two');
+      target.appendChild(document.createTextNode('XXXXX')); 
+      const total = Math.ceil(2000 / (target.offsetWidth / 5)); // offsetWidth gives you the width of the element in pixels
+      target.firstChild.nodeValue = 'X'.repeat(total); // nodeValue gives you access to the contents of a text node
+    });
+  </script>
+</body>
+</html>

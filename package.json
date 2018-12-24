@@ -1,0 +1,14 @@
+{
+  "name": "grokking-angular",
+  "version": "0.0.1",
+  "description": "Grokking Angular package.json to include dependencies at the workspace level",
+  "engines": {
+    "node": "10.x.x",
+    "npm": "6.4.1"
+  },
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "eslint": "5.10.0"
+  }
+}

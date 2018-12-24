@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Hello!</title>
+</head>
+<body>
+  <p style="border: 3px solid red">
+    Hello to Jason Isaacs!
+  </p>
+  <p>
+    Please have a look at the JavaScript console.
+  </p>
+  <script>
+    'use strict';
+    const para = document.body.getElementsByTagName("p")[0];
+    console.log(`size and position of an element:`);
+    console.log(`  offsetWidth : ${ para.offsetWidth }`);
+    console.log(`  offsetHeight: ${ para.offsetHeight }`);
+    console.log(`Space inside the element ignoring the border width:`);
+    console.log(`  clientWidth : ${ para.clientWidth }`);
+    console.log(`  clientHeight: ${ para.clientHeight }`);
+    console.log(`Precise position of the element in the screen:`);
+    console.log(`  getBoundingClientRect.top   : ${ para.getBoundingClientRect().top }`);    
+    console.log(`  getBoundingClientRect.bottom: ${ para.getBoundingClientRect().bottom }`);
+    console.log(`  getBoundingClientRect.right : ${ para.getBoundingClientRect().right }`);
+    console.log(`  getBoundingClientRect.left  : ${ para.getBoundingClientRect().left }`);            
+  </script>
+</body>
+</html>

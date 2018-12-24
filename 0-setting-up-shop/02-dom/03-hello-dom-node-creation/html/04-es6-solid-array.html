@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Hello!</title>
+</head>
+<body>
+  <p>The DOM's diagrams</p>
+  <img src="../../images/01-tags-as-boxes.png" alt="Displaying tags as boxes">
+  <img src="../../images/02-tree-dom.png" alt="The DOM as a tree">
+  <img src="../../images/03-moving-through-the-tree.png" alt="Methods for navigating the DOM">
+  <script>
+    'use strict';
+    function replaceImages() {
+      const imageNodes = [...document.body.getElementsByTagName('img')];
+      for (const imageNode of imageNodes) {
+        if (imageNode.alt) {
+          const textNode = document.createTextNode(`"${ imageNode.alt }"`);
+          imageNode.parentNode.replaceChild(textNode, imageNode);
+        }
+      }
+    }
+    replaceImages();
+  </script>
+</body>
+</html>

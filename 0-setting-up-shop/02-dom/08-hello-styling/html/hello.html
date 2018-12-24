@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Hello!</title>
+</head>
+<body>
+  <p><a href=".">Normal link</a></p>
+  <p><a href="." style="color: green">Green link</a></p>
+  <p><a href="." style="color: red; border: none">Red Link</a></p>
+  <br>
+  This text is displayed <strong>inline</strong>,
+  <strong style="display: block">as a block</strong>, and
+  <strong style="display: none">not at all</strong>.
+  <br>
+  <p id="para" style="color: green">
+    Nice green? text
+  </p>
+  <script>
+    'use strict';
+    const para = document.getElementById('para');
+    console.log(para.style.color);
+    para.style.color = 'purple';
+  </script>
+</body>
+</html>

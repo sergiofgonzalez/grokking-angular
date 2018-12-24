@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Hello!</title>
+</head>
+<body>
+  <blockquote id="quote">
+    The future is here. It's just not very evenly distributed.
+  </blockquote>
+  <script>
+    'use strict';
+    function elt(type, ...children) {
+      const node = document.createElement(type);
+      for (let child of children) {
+        if (typeof child !== 'string') {
+          node.appendChild(child);
+        } else {
+          node.appendChild(document.createTextNode(child));
+        }
+      }
+      return node;
+    }        
+
+    document.getElementById('quote')
+      .appendChild(
+        elt('footer', '-', 
+          elt('strong', 'William Gibson'), 
+          ', interview on NPR ', 
+          elt('em', 'Fresh Air'), 
+          ', 1993'));
+  </script>
+</body>
+</html>
