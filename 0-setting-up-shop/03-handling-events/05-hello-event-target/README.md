@@ -1,0 +1,2 @@
+# 05 &mdash; Hello, Event Target
+> Demonstrates how `event.target` can be used in a technique that registers an event handler in a containing element and then uses `event.target` to identify where the event originated.

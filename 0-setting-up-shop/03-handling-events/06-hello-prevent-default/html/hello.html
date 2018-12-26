@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Hello!</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>Hello!</h1>
+    <p>
+      A link that cannot be followed: <a href="https://developer.mozilla.org/">Mozilla Developer Network</a>
+    </p>
+    <p>
+      A button on which contextual menu is not displayed: 
+      <button type="button" class="btn btn-primary">Click me with the right button!</button>
+    </p>
+  </div>
+  <script>
+    // disables default behavior for a link
+    const anchor = document.querySelector('a');
+    anchor.addEventListener('click', evt => evt.preventDefault());
+
+    // tries to disable default behavior for right-clicking on a button: but does not work
+    const button = document.querySelector('button');
+    button.addEventListener('mousedown', evt => {
+      if (event.button === 2) {
+        evt.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>

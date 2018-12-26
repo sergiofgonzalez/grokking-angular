@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Hello!</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>Hello!</h1>
+    <p>
+      click the mouse anywhere on the screen
+    </p>
+    <p>
+      event.button: <span id="evt-button"></span>
+    </p>
+    <p>
+      event.clientX: <span id="evt-client-x"></span>
+      </p>
+    <p>
+      event.clientY: <span id="evt-client-y"></span>
+    </p>
+    <p>
+      event.pageX: <span id="evt-page-x"></span>
+    </p>
+    <p>
+      event.pageY: <span id="evt-page-y"></span>
+    </p>
+    <p>
+      mouse.coordinates <span id="mouse-coordinates"></span>
+    </p>
+    <p id="evt-type">
+      event.type:
+    </p>                    
+  </div>
+  <script>
+    const evtButton = document.querySelector('#evt-button');
+    const evtType = document.querySelector('#evt-type');
+    const clientX = document.querySelector('#evt-client-x');
+    const clientY = document.querySelector('#evt-client-y');
+    const pageX = document.querySelector('#evt-page-x');
+    const pageY = document.querySelector('#evt-page-y');          
+
+    const handler = evt => {
+      evtButton.textContent = event.button;
+      clientX.textContent = event.clientX;
+      clientY.textContent = event.clientY;
+      pageX.textContent = event.pageX;
+      pageY.textContent = event.pageY;
+
+      const brNode = document.createElement('br');
+      const evtTextData = document.createTextNode(event.type);
+      evtType.appendChild(brNode);
+      evtType.appendChild(evtTextData);
+    };
+
+    window.addEventListener('mousedown', handler);
+    window.addEventListener('mouseup', handler);
+    window.addEventListener('click', handler);
+    window.addEventListener('dblclick', handler);
+
+    const mouseCoordinates = document.querySelector('#mouse-coordinates');  
+    window.addEventListener('mousemove', evt => {
+      mouseCoordinates.textContent = `(${ evt.clientX }, ${ evt.clientY })`;
+    });
+
+  </script>
+</body>
+</html>

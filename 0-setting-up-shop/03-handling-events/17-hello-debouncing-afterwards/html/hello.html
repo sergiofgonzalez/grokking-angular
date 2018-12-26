@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Hello!</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>Move your mouse!</h1>
+    <p>
+      Mouse coordinates: <span id="mouse-coordinates"></span>
+    </p>
+    <p>
+      Events processed: <span id="evt-count"></span>
+    </p>
+  </div>
+  <script>
+    const mouseCoordinates = document.querySelector('#mouse-coordinates');
+    const evtCount = document.querySelector('#evt-count');
+  
+    /* uncomment to see what happens without debouncing the event processing */
+    // window.addEventListener('mousemove', evt => {
+    //   evtCount.textContent = Number(evtCount.textContent) + 1;
+    //   mouseCoordinates.textContent = `(${ evt.pageX }, ${ evt.pageY })`;
+    // });
+
+    let scheduled = null;
+    window.addEventListener('mousemove', evt => {
+      if (!scheduled) {
+        setTimeout(() => {
+          evtCount.textContent = Number(evtCount.textContent) + 1;
+          mouseCoordinates.textContent = `(${ evt.pageX }, ${ evt.pageY })`;          
+          scheduled = null;
+        }, 2000);
+      }
+      scheduled = event;
+    });
+  </script>
+</body>
+</html>

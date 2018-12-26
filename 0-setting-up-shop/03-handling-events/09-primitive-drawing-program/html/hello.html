@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Hello!</title>
+</head>
+<style>
+  body {
+    height: 200px;
+    background: beige;
+  }
+
+  .dot {
+    height: 8px; width: 8px;
+    border-radius: 4px;
+    background: blue;
+    position: absolute;
+  }
+</style>
+<body>
+  <script>
+    window.addEventListener('click', event => {
+      const dot = document.createElement('div');
+      dot.className = 'dot';
+      dot.style.left = `${ (event.pageX - 4)}px`;
+      dot.style.top = `${ (event.pageY - 4)}px`;
+      document.body.appendChild(dot);
+    });
+  </script>
+</body>
+</html>

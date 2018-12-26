@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Hello!</title>
+</head>
+<script>
+  window.addEventListener('load', () => {
+    console.log(`The page has been loaded: ${ new Date().toISOString() }`);
+  });
+
+  addEventListener('beforeunload', event => {
+    console.log(`User is navigating away from the page!`);
+    event.returnValue = '\o/';
+  });
+</script>
+<body>
+  <script>
+    // somehow this is not being triggered at all
+    document.body.addEventListener('load', () => console.log(`The document has been loaded: ${ new Date().toISOString() }`));
+  </script>
+  <h1>Open the developer's console</h1>
+  <p>
+    <img src="./img/castle.png">
+  </p>
+  <script>
+    const img = document.querySelector('img');
+    img.addEventListener('load', () => console.log(`The image has been loaded: ${ new Date().toISOString() }`));
+  </script>
+</body>
+</html>

@@ -516,6 +516,10 @@ If we would just updated the DOM in a loop, the page would freeze and nothing wo
 | `style="display: block"` | sets the *style* attribute with the *display* property set to *block* |
 | `style="display: inline"` | sets the *style* attribute with the *display* property set to *none*, meaning it won't be displayed |
 | `style="display: none"` | sets the *style* attribute with the *display* property set to *none*, meaning it won't be displayed |
+| `style="display: static"` | the element sits in its normal position in the document (default) |
+| `style="display: relative"` | the element sits in its normal position but its `top` and `left` properties can be used to move it relative to the normal place |
+| `style="position: absolute"` | the element does not take up space any more and its `top` and `left` properties can be used to position the element relative to the top-left corner of the nearest enclosing element whose `position` property isn't `static` (or relative to the document if such enclosing element does not exist) |
+| `style="position: fixed"` | like `position: absolute` but also prevents the element from scrolling with the rest of the document |
 | `strong {...}` | defines a rule that will affect the strong elements |
 | `.subtle {...}` | defines a rule that will affect the elements with `class="subtle"` |
 | `#header {...}` | defines a rule that will affect the element with `id="header"` |

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Hello!</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>Hello!</h1>
+    <p>
+      Press any key (including special keys and modifiers)
+    </p>
+    <p>
+      event.key: <span id="evt-key"></span>
+    </p>
+    <p>
+      event.shiftKey: <span id="evt-shift-key"></span>
+    </p>
+    <p>
+      event.ctrlKey: <span id="evt-ctrl-key"></span>
+    </p>
+    <p>
+      event.altKey: <span id="evt-alt-key"></span>
+    </p>
+    <p>
+      event.metaKey: <span id="evt-meta-key"></span>
+    </p>                
+  </div>
+  <script>
+    let previousEvent = { event: null, keyPressed: null };
+    const keySpan = document.querySelector('#evt-key');
+    const shiftKey = document.querySelector('#evt-shift-key');
+    const ctrlKey = document.querySelector('#evt-ctrl-key');
+    const altKey = document.querySelector('#evt-alt-key');
+    const metaKey = document.querySelector('#evt-meta-key');            
+
+    window.addEventListener('keydown', event => {
+      if (previousEvent.event === 'keydown' && previousEvent.key === event.key)
+        keySpan.textContent = `${ event.key } [keydown] (repetition)`;
+      else 
+        keySpan.textContent = `${ event.key } [keydown]`;
+
+      previousEvent.event = 'keydown';
+      previousEvent.key = event.key;
+
+      shiftKey.textContent = event.shiftKey;
+      ctrlKey.textContent = event.ctrlKey;
+      altKey.textContent = event.altKey;
+      metaKey.textContent = event.metaKey;
+    });
+
+    window.addEventListener('keydown', event => {
+      if (previousEvent.event === 'keydown' && previousEvent.key === event.key)
+        keySpan.textContent = `${ event.key } [keydown] (repetition)`;
+      else 
+        keySpan.textContent = `${ event.key } [keydown]`;
+
+      previousEvent.event = 'keydown';
+      previousEvent.key = event.key;
+
+      shiftKey.textContent = `${ event.shiftKey } [${ event.type }]`;
+      ctrlKey.textContent = `${ event.ctrlKey } [${ event.type }]`;
+      altKey.textContent = `${ event.altKey } [${ event.type }]`;
+      metaKey.textContent = `${ event.metaKey} [${ event.type }]`;
+    });
+
+    window.addEventListener('keyup', event => {
+      keySpan.textContent = `${ event.key } [keyup]`;
+
+      previousEvent.event = 'keyup';
+      previousEvent.key = event.key;
+
+      shiftKey.textContent = `${ event.shiftKey } [${ event.type }]`;
+      ctrlKey.textContent = `${ event.ctrlKey } [${ event.type }]`;
+      altKey.textContent = `${ event.altKey } [${ event.type }]`;
+      metaKey.textContent = `${ event.metaKey} [${ event.type }]`;
+    });    
+
+  </script>
+</body>
+</html>

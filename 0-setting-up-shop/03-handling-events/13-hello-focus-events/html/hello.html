@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Hello!</title>
+</head>
+<body>
+  <h1>Interact with the inputs!</h1>
+  <p>Name: <input type="text" data-help="Your full name"></p>
+  <p>Age: <input type="text" data-help="Your age in years"></p>
+  <p id="help"></p>
+  <script>
+    const help = document.querySelector('#help');
+    const fields = [...document.querySelectorAll('input')];
+    for (const field of fields) {
+      field.addEventListener('focus', event => {
+        const text = event.target.getAttribute('data-help');
+        help.textContent = text;
+      });
+      field.addEventListener('blur', () => {
+        help.textContent = '';
+      });
+    }
+  </script>
+</body>
+</html>
