@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <title>Hello!</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>Open the developer's console!</h1>
+    <form action="example/submit.html">
+      <div class="form-group">
+        <label for="value">Value</label>
+        <input type="text" name="value" id="value" placeholder="Enter the information to save" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+  </div>
+<script>
+  const form = document.querySelector('form');
+  form.addEventListener('submit', evt => {
+    console.log(`Saving value: ${ form.elements.value.value }`);
+    event.preventDefault();
+  });
+</script>
+</body>
+</html>

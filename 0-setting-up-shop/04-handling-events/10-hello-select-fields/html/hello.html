@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <title>Hello!</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="form-group">
+      <label for="binary-select">Select the binary value using the multiple select</label>
+      <select multiple class="form-control" id="binary-select">
+        <option value="1">0001</option>
+        <option value="2">0010</option>
+        <option value="4">0100</option>
+        <option value="8">1000</option>
+      </select> = <span id="output">0</span>
+    </div>
+  </div>
+  <script>
+    const select = document.querySelector('select');
+    const output = document.querySelector('#output');
+    select.addEventListener('change', () => {
+      let number = 0;
+      for (const option of [...select.options]) {
+        if (option.selected) {
+          number += Number(option.value);
+        }
+      }
+      output.textContent = number;
+    });
+  </script>
+</body>
+</html>

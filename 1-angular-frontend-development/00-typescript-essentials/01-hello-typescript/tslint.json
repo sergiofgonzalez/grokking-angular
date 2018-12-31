@@ -1,0 +1,16 @@
+// Basic tslint configuration using JSON
+// more info on https://palantir.github.io/tslint/usage/configuration/
+{
+  "extends": "tslint:recommended",
+  "defaultSeverity": "error",
+  "rules": {
+    "no-console": {
+      "severity": "none"
+    },
+    "quotemark": [true, "single", "backtick"],
+    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"],
+    "object-literal-sort-keys": false,
+    "trailing-comma": false,
+    "arrow-parens": false    
+  }
+}

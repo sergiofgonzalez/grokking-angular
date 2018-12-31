@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <title>Hello!</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>Open the developer's console!</h1>
+    <p>
+      Select a block of text and press F12 to replace it with the string found in the text field
+    </p>
+    <form>
+      <div class="form-group">
+        <label for="value">Replacement String</label>
+        <input type="text" name="replacementString" id="replacement-string" placeholder="Type text here" class="form-control" autofocus>
+      </div>
+      <div class="form-group">
+        <label for="text">Text</label>
+        <textarea class="form-control" name="text" id="text" rows="3"></textarea>
+      </div>
+    </form>
+  </div>
+  <script>
+    const form = document.querySelector('form');
+    const textarea = form.elements.text;
+    const input = form.elements.replacementString;
+
+    textarea.addEventListener('keydown', event => {
+      if (event.keyCode === 113) {  /* key code 113 is F2 */
+        replaceSelection(textarea, input.value || 'Hello to Jason Isaacs!');
+        event.preventDefault();
+      }
+    });
+
+    function replaceSelection(field, str) {
+      const from = field.selectionStart;
+      const to = field.selectionEnd;
+      field.value = field.value.slice(0, from) + str + field.value.slice(to);
+
+      field.selectionStart = from + str.length;
+      field.selectionEnd = from + str.length;
+    }
+  </script>
+</body>
+</html>

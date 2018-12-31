@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <title>Hello!</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <legend>Choose your color:</legend>
+    <div class="form-check">
+      <input type="radio" name="color" id="radio-color-orange" value="orange" class="form-check-input">
+      <label class="form-check-label" for="radio-color-orange">Orange</label>
+    </div>
+    <div class="form-check">
+      <input type="radio" name="color" id="radio-color-lightgreen" value="lightgreen" class="form-check-input">
+      <label class="form-check-label" for="radio-color-lightgreen">Green</label>
+    </div>    
+    <div class="form-check">
+      <input type="radio" name="color" id="radio-color-lightblue" value="lightblue" class="form-check-input">
+      <label class="form-check-label" for="radio-color-lightblue">Blue</label>
+    </div>
+  </div>
+  <script>
+    const radioButtons = document.querySelectorAll('[name=color]');
+    for (const radioButton of [...radioButtons]) {
+      radioButton.addEventListener('change', () => document.body.style.background = radioButton.value);
+    }
+  </script>
+</body>
+</html>

@@ -14,3 +14,9 @@ Concepts on the Document Object Model (DOM) and how to interact with it from Jav
 
 ## [03 &mdash; Handling Events](./03-handling-events)
 Event handling in the browser.
+
+## [04 &mdash; Forms](./04-forms)
+Interacting with forms.
+
+## [05 &mdash; Cheat Sheets](./05-cheat-sheets)
+Browser-based JavaScript cheat sheets.

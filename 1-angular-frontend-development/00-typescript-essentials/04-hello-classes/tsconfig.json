@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": "app/src",
+    "sourceMap": true,
+    "noEmitOnError": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "target": "es6",
+    "watch": false,
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2016", "dom"],
+    "plugins": [{"name": "typescript-tslint-plugin"}]
+  },
+  "exclude": ["node_modules"],
+}

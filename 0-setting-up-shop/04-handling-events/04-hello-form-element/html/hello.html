@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <title>Hello!</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>Hello, Forms!</h1>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter your name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" name="password" placeholder="Enter your password" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary">Log in</button>
+    </form>
+  </div>
+<script>
+    const form = document.querySelector('form');
+    [...form.elements].forEach((elem, i) => {
+      console.log(`${ i }: ${ elem.nodeName } - ${ elem.id }`);
+    });
+    console.log(`form.elements.password.type: ${ form.elements.password.type }`);
+    console.log(`form.elements.name.form === form: ${ form.elements.name.form === form }`);
+  </script>
+</body>
+</html>

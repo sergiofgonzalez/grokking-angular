@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <title>Hello!</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <p>
+      Please type some text
+    </p>
+    <div class="form-group">
+      <label for="text">Text</label>
+      <textarea class="form-control" name="text" rows="3" style="resize: none" autofocus></textarea>
+      <small class="form-text text-muted">Length: <span id="length">0</span></small>
+    </div>
+  </div>
+  <script>
+    const textarea = document.querySelector('textarea');
+    const lengthPlaceholder = document.querySelector('#length');
+    textarea.addEventListener('input', evt => {
+      lengthPlaceholder.textContent = textarea.value.length;
+    });
+  </script>
+</body>
+</html>
